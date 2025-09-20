@@ -1,6 +1,7 @@
 use std::path::PathBuf;
 use std::env;
 
+
 mod file;
 mod http;
 
@@ -31,15 +32,22 @@ fn get_database_path() -> PathBuf {
         .join("sqlite-latest.sqlite")
 }
 
-/*
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+    // run with --ignored --nocapture
+    #[tokio::test]
+    #[ignore]
+    async fn test_real_download() {
+        let db_path = program_data().join("fuzzwork");
+        if db_path.exists() {
+            println!("Cleaning up before test");
+            std::fs::remove_dir_all(&db_path).expect("Failed to cleanup");
+        }
+    
+        update().await;
+        
+        assert!(get_database_path().exists());
     }
 }
-*/
