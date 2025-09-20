@@ -27,7 +27,7 @@ fn program_data() -> PathBuf {
 
 fn get_database_path() -> PathBuf {
     program_data()
-        .join("fuzzworks")
+        .join("fuzzwork")
         .join("sqlite-latest.sqlite")
 }
 
