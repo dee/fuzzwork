@@ -7,3 +7,4 @@ edition = "2024"
 bzip2 = "0.6.0"
 indicatif = "0.18.0"
 reqwest = "0.12.23"
+tokio = { version = "1.47.1", features = ["macros"] }
