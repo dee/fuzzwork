@@ -2,7 +2,7 @@ use std::io::prelude::*;
 use std::path::{Path, PathBuf};
 use std::fs::File;
 
-static USERAGENT: &str = "Fuzzworks database updater";
+static USERAGENT: &str = "Fuzzwork database updater";
 static URL: &str = "https://www.fuzzwork.co.uk/dump/sqlite-latest.sqlite.bz2";
 
 fn create_client() -> reqwest::Client {
