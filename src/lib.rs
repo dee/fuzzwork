@@ -26,7 +26,7 @@ fn program_data() -> PathBuf {
     PathBuf::from(p)
 }
 
-fn get_database_path() -> PathBuf {
+pub fn get_database_path() -> PathBuf {
     program_data()
         .join("fuzzwork")
         .join("sqlite-latest.sqlite")
